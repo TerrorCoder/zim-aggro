@@ -733,6 +733,7 @@ const pageSegments = {
   seasonal: 'seasonal-calendar',
   vegetables: 'vegetables-calendar',
   pests: 'pest-disease-gallery',
+  contact: 'contact-us',
 };
 
 function pagePath(langCode, pageKey) {
@@ -763,6 +764,7 @@ function AppFrame({ langCode, currentPage, children, lowData, setLowData }) {
     { key: 'seasonal', label: t.nav.seasonal },
     { key: 'vegetables', label: t.nav.vegetables },
     { key: 'pests', label: t.nav.pests },
+    { key: 'contact', label: t.nav.contact ?? 'Contact Us' },
   ];
   const currentLabel = navItems.find((item) => item.key === currentPage)?.label ?? t.nav.overview;
 
@@ -772,17 +774,6 @@ function AppFrame({ langCode, currentPage, children, lowData, setLowData }) {
         <div className="top-header-bar">
           <strong className="brand">Zim-Agro</strong>
           <div className="header-right">
-            <div className="lang-switch" aria-label="Language selector">
-              {Object.values(languages).map((entry) => (
-                <Link
-                  key={entry.code}
-                  className={entry.code === langCode ? 'active' : ''}
-                  to={entry.path}
-                >
-                  {entry.label}
-                </Link>
-              ))}
-            </div>
             <div className="header-actions no-print">
               <label className="toggle">
                 <input
@@ -896,6 +887,12 @@ function OverviewPage({ langCode, lowData, setLowData }) {
       title: t.nav.pests,
       copy: t.pestsLead,
       image: '/images/overview/overview-pests-thumb.jpg',
+    },
+    {
+      key: 'contact',
+      title: t.nav.contact ?? 'Contact Us',
+      copy: 'Request platform updates, submit feedback, and subscribe to planning alerts.',
+      image: '/images/overview/overview-banner.jpg',
     },
   ];
   const zimResearchCards = [
@@ -2202,6 +2199,112 @@ function PestsPage({ langCode, lowData, setLowData }) {
   );
 }
 
+function ContactPage({ langCode, lowData, setLowData }) {
+  const supportTopics = [
+    {
+      title: 'Request an Information Update',
+      detail:
+        'Need fresh data in a section? Email the exact page name, the information that looks outdated, the district or region it applies to, and the season/year you are planning for.',
+    },
+    {
+      title: 'Ask for Region-Specific Guidance',
+      detail:
+        'Share your Natural Region, main crops, land size, and your current challenge. We can prioritize practical updates that match your production conditions.',
+    },
+    {
+      title: 'Report Accuracy or Usability Issues',
+      detail:
+        'If you spot inconsistencies or unclear advice, send a screenshot plus a short explanation of what should be corrected. Your feedback helps improve field reliability for all users.',
+    },
+  ];
+
+  const requestChecklist = [
+    'Your district, ward, and Natural Region (I-V).',
+    'Crop or livestock system affected by the update.',
+    'The specific section needing revision (Matrix, Estimator, Market Clock, Seasonal, Vegetables, or Pests).',
+    'The exact information you want updated and why it matters for your planning decisions.',
+    'Any supporting source links, extension notes, or market observations you want reviewed.',
+    'Urgency level and the deadline you are working toward.',
+  ];
+
+  return (
+    <AppFrame langCode={langCode} currentPage="contact" lowData={lowData} setLowData={setLowData}>
+      <main className="stack">
+        <section className="card print-surface">
+          <div className="contact-banner" aria-hidden="true" />
+          <h2>Contact Us</h2>
+          <p>
+            Reach out when you need a content update, clarification, or help applying platform guidance to your farm
+            planning workflow. Detailed requests help us respond faster and with more useful recommendations.
+          </p>
+
+          <div className="contact-grid">
+            {supportTopics.map((topic) => (
+              <article key={topic.title} className="contact-topic-card">
+                <h3>{topic.title}</h3>
+                <p>{topic.detail}</p>
+              </article>
+            ))}
+          </div>
+
+          <article className="contact-direct-card">
+            <h3>Primary Contact Channel</h3>
+            <p>
+              Email: <a href="mailto:lincolnrwodzi418@gmail">lincolnrwodzi418@gmail</a>
+            </p>
+            <p>
+              For update requests, use the subject line <strong>"Zim-Agro Update Request - [Section Name]"</strong>
+              so your request can be routed quickly.
+            </p>
+            <p>
+              Typical response guidance: acknowledgement within 1-2 business days, with priority to high-impact
+              seasonal updates and urgent field-risk corrections.
+            </p>
+          </article>
+        </section>
+
+        <section className="card print-surface">
+          <h2>How to Request a Specific Update</h2>
+          <p>
+            If you are requesting an update on particular information, include the checklist below so the team can
+            assess, validate, and publish improvements without unnecessary back-and-forth.
+          </p>
+
+          <ul className="contact-checklist">
+            {requestChecklist.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+
+          <div className="intel-signal">
+            <div className="intel-signal-head">
+              <span className="intel-badge intel-badge--signal">Submission Tip</span>
+              <strong className="intel-signal-label">High-quality requests are processed faster</strong>
+            </div>
+            <p>
+              Requests that include region context, source evidence, and a clear planning impact are easier to verify
+              and are more likely to be released in the next update cycle.
+            </p>
+          </div>
+        </section>
+
+        <section className="card print-surface">
+          <h2>Email-Only Contact (Current Setup)</h2>
+          <p>
+            Yes, this static setup does not need special functionality for visitors to contact you. They can send
+            messages directly to <a href="mailto:lincolnrwodzi418@gmail">lincolnrwodzi418@gmail</a> using their own
+            email app.
+          </p>
+          <p>
+            As traffic grows, you can later add a proper contact form and newsletter integration without rebuilding the
+            whole site structure.
+          </p>
+        </section>
+      </main>
+    </AppFrame>
+  );
+}
+
 function RemedyPage({ langCode, lowData, setLowData }) {
   const t = languages[langCode];
   const params = useParams();
@@ -2269,6 +2372,10 @@ function RoutedApp() {
     {
       path: pagePath(langCode, 'pests'),
       element: <PestsPage langCode={langCode} lowData={lowData} setLowData={setLowData} />,
+    },
+    {
+      path: pagePath(langCode, 'contact'),
+      element: <ContactPage langCode={langCode} lowData={lowData} setLowData={setLowData} />,
     },
     {
       path: remedyPath(langCode, ':slug'),
