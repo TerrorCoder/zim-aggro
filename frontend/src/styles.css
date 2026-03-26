@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --bg-0: #eef3ea;
   --bg-1: #d6e3d2;
   --ink: #102218;
@@ -313,7 +313,7 @@ a {
   min-height: 256px;
   background-image:
     linear-gradient(175deg, rgba(7, 29, 17, 0.15), rgba(7, 29, 17, 0.42)),
-    url('/images/hero/hero-main.png'),
+    url('/images/hero/hero-main.jpg'),
     linear-gradient(140deg, #7aa46f, #445f39);
 }
 
@@ -327,7 +327,7 @@ a {
   min-height: 118px;
   background-image:
     linear-gradient(165deg, rgba(9, 30, 18, 0.1), rgba(9, 30, 18, 0.38)),
-    url('/images/hero/hero-alt.png'),
+    url('/images/hero/hero-alt.jpg'),
     linear-gradient(150deg, #d6ad63, #6f8f57);
 }
 
@@ -1997,28 +1997,28 @@ a {
 .pest-image.fall-armyworm {
   background-image:
     linear-gradient(160deg, rgba(11, 32, 19, 0.22), rgba(11, 32, 19, 0.42)),
-    url('/images/pests/fall%20armyworm.png'),
+    url('/images/pests/fall%20armyworm.jpg'),
     linear-gradient(145deg, #7ba26f, #c4d7ab);
 }
 
 .pest-image.leaf-rust {
   background-image:
     linear-gradient(160deg, rgba(11, 32, 19, 0.22), rgba(11, 32, 19, 0.42)),
-    url('/images/pests/leaf%20rust.png'),
+    url('/images/pests/leaf%20rust.jpg'),
     linear-gradient(145deg, #709e5f, #bacf8a);
 }
 
 .pest-image.tuta-absoluta {
   background-image:
     linear-gradient(160deg, rgba(11, 32, 19, 0.22), rgba(11, 32, 19, 0.42)),
-    url('/images/pests/tuta%20absoluta.png'),
+    url('/images/pests/tuta%20absoluta.jpg'),
     linear-gradient(145deg, #7f9e66, #d7dca1);
 }
 
 .pest-image.aphid-colony {
   background-image:
     linear-gradient(160deg, rgba(11, 32, 19, 0.22), rgba(11, 32, 19, 0.42)),
-    url('/images/pests/aphid%20colony.png'),
+    url('/images/pests/aphid%20colony.jpg'),
     linear-gradient(145deg, #87af7b, #cad8a4);
 }
 

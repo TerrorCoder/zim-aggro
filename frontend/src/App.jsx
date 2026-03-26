@@ -453,7 +453,7 @@ const regionData = [
   {
     id: 'I',
     color: '#2d6a4f',
-    image: '/images/matrix/matrix-region-1.png',
+    image: '/images/matrix/matrix-region-1.jpg',
     rain: '900-1200 mm',
     planting: 'Sep-Nov',
     spacing: 'Maize: 75 cm x 25 cm',
@@ -462,7 +462,7 @@ const regionData = [
   {
     id: 'II',
     color: '#40916c',
-    image: '/images/matrix/matrix-region-2.png',
+    image: '/images/matrix/matrix-region-2.jpg',
     rain: '700-1050 mm',
     planting: 'Oct-Dec',
     spacing: 'Tobacco: 120 cm x 55 cm',
@@ -471,7 +471,7 @@ const regionData = [
   {
     id: 'III',
     color: '#52b788',
-    image: '/images/matrix/matrix-region-3.png',
+    image: '/images/matrix/matrix-region-3.jpg',
     rain: '500-800 mm',
     planting: 'Nov-Dec',
     spacing: 'Cotton: 90 cm x 30 cm',
@@ -480,7 +480,7 @@ const regionData = [
   {
     id: 'IV',
     color: '#74c69d',
-    image: '/images/matrix/matrix-region-4.png',
+    image: '/images/matrix/matrix-region-4.jpg',
     rain: '450-650 mm',
     planting: 'Nov-Jan',
     spacing: 'Pearl millet: 60 cm x 20 cm',
@@ -489,7 +489,7 @@ const regionData = [
   {
     id: 'V',
     color: '#95d5b2',
-    image: '/images/matrix/matrix-region-5.png',
+    image: '/images/matrix/matrix-region-5.webp',
     rain: '300-500 mm',
     planting: 'Dec-Jan',
     spacing: 'Finger millet: 45 cm x 10 cm',
@@ -570,7 +570,7 @@ const marketData = [
     hint: 'Hold late-March harvest for April release where storage allows.',
     strategy: 'Stage supply: release weekly batches rather than all at once to prevent local gluts.',
     region: 'Regions I–III',
-    image: '/images/market_clock/market-tomato-peak.png',
+    image: '/images/market_clock/market-tomato-peak.jpg',
   },
   {
     name: 'Onion',
@@ -581,7 +581,7 @@ const marketData = [
     hint: 'Dry and stage supply for winter demand spikes.',
     strategy: 'Cure bulbs properly for 2–3 weeks post-harvest; well-cured onions trade at premium in mid-winter.',
     region: 'Regions II–III',
-    image: '/images/market_clock/market-onion-peak.png',
+    image: '/images/market_clock/market-onion-peak.jpg',
   },
   {
     name: 'Maize',
@@ -592,7 +592,7 @@ const marketData = [
     hint: 'Sell in tranches post-harvest; avoid panic sales in glut periods.',
     strategy: 'Retain 20–30% of harvest for January–February when lean-season demand lifts prices.',
     region: 'Regions II–IV',
-    image: '/images/market_clock/market-maize-peak.png',
+    image: '/images/market_clock/market-maize-peak.jpg',
   },
   {
     name: 'Cabbage',
@@ -603,7 +603,7 @@ const marketData = [
     hint: 'Winter demand is steady; size-grade at harvest to target urban wholesale.',
     strategy: 'Stagger planting at 3-week intervals to spread your supply window and improve negotiating position.',
     region: 'Regions I–II',
-    image: '/images/market_clock/market-tomato-peak.png',
+    image: '/images/market_clock/market-tomato-peak.jpg',
   },
   {
     name: 'Groundnut',
@@ -614,7 +614,7 @@ const marketData = [
     hint: 'Cooking-oil processors and informal traders compete — compare both channels before committing.',
     strategy: 'Dry to under 8% moisture before storage; a poorly dried crop loses value fast.',
     region: 'Regions II–III',
-    image: '/images/market_clock/market-onion-peak.png',
+    image: '/images/market_clock/market-onion-peak.jpg',
   },
   {
     name: 'Soybean',
@@ -625,7 +625,7 @@ const marketData = [
     hint: 'Contract pricing is often better than spot; approach processors before harvest.',
     strategy: 'Grade carefully — moisture and splits determine whether you receive full or discounted price.',
     region: 'Region II',
-    image: '/images/market_clock/market-maize-peak.png',
+    image: '/images/market_clock/market-maize-peak.jpg',
   },
   {
     name: 'Sweet Potato',
@@ -636,7 +636,7 @@ const marketData = [
     hint: 'Lean-season demand from informal markets peaks — target urban growth points.',
     strategy: 'Harvest at a slight undersize to extend shelf life during transport to distant markets.',
     region: 'Regions II–IV',
-    image: '/images/market_clock/market-tomato-peak.png',
+    image: '/images/market_clock/market-tomato-peak.jpg',
   },
   {
     name: 'Cotton',
@@ -647,7 +647,7 @@ const marketData = [
     hint: 'Contracted farmers should deliver promptly; avoid holding costs against a flat price.',
     strategy: 'Grade A cotton commands price premiums — focus on clean picking and rapid turnaround.',
     region: 'Region III',
-    image: '/images/market_clock/market-maize-peak.png',
+    image: '/images/market_clock/market-maize-peak.jpg',
   },
 ];
 
@@ -865,37 +865,37 @@ function OverviewPage({ langCode, lowData, setLowData }) {
       key: 'matrix',
       title: t.nav.matrix,
       copy: t.matrixLead,
-      image: '/images/overview/overview-matrix-thumb.png',
+      image: '/images/overview/overview-matrix-thumb.jpg',
     },
     {
       key: 'calculator',
       title: t.nav.calculator,
       copy: t.calculatorLead,
-      image: '/images/overview/overview-estimator-thumb.png',
+      image: '/images/overview/overview-estimator-thumb.jpg',
     },
     {
       key: 'market',
       title: t.nav.market,
       copy: t.marketLead,
-      image: '/images/overview/overview-market-thumb.png',
+      image: '/images/overview/overview-market-thumb.jpg',
     },
     {
       key: 'seasonal',
       title: t.nav.seasonal,
       copy: t.seasonalLead,
-      image: '/images/overview/overview-seasonal-thumb.png',
+      image: '/images/overview/overview-seasonal-thumb.jpg',
     },
     {
       key: 'vegetables',
       title: t.nav.vegetables,
       copy: t.vegetablesLead,
-      image: '/images/overview/overview-vegetables-thumb.png',
+      image: '/images/overview/overview-vegetables-thumb.jpg',
     },
     {
       key: 'pests',
       title: t.nav.pests,
       copy: t.pestsLead,
-      image: '/images/overview/overview-pests-thumb.png',
+      image: '/images/overview/overview-pests-thumb.jpg',
     },
   ];
   const zimResearchCards = [
@@ -970,7 +970,7 @@ function OverviewPage({ langCode, lowData, setLowData }) {
           <div
             className="overview-banner"
             aria-hidden="true"
-            style={{ backgroundImage: "url('/images/overview/overview-banner.png')" }}
+            style={{ backgroundImage: "url('/images/overview/overview-banner.jpg')" }}
           />
           <h2>{t.nav.overview}</h2>
           <p>{t.opsCenterCopy}</p>
@@ -1081,7 +1081,7 @@ function MatrixPage({ langCode, lowData, setLowData }) {
           <div
             className="matrix-banner"
             aria-hidden="true"
-            style={{ backgroundImage: "url('/images/matrix/matrix-banner.png')" }}
+            style={{ backgroundImage: "url('/images/matrix/matrix-banner.jpg')" }}
           />
           <h2>{t.matrixTitle}</h2>
           <p>{t.matrixLead}</p>
@@ -1219,22 +1219,22 @@ function CalculatorPage({ langCode, lowData, setLowData }) {
     {
       key: 'acreage',
       title: t.acreage,
-      image: '/images/estimator/estimator-acreage-input.png',
+      image: '/images/estimator/estimator-acreage-input.webp',
     },
     {
       key: 'seed',
       title: t.seedNeed,
-      image: '/images/estimator/estimator-seed-rate.png',
+      image: '/images/estimator/estimator-seed-rate.jpg',
     },
     {
       key: 'basal',
       title: t.basalNeed,
-      image: '/images/estimator/estimator-basal-fertilizer.png',
+      image: '/images/estimator/estimator-basal-fertilizer.jpg',
     },
     {
       key: 'top',
       title: t.topNeed,
-      image: '/images/estimator/estimator-top-dressing.png',
+      image: '/images/estimator/estimator-top-dressing.jpg',
     },
   ];
 
@@ -1254,8 +1254,8 @@ function CalculatorPage({ langCode, lowData, setLowData }) {
         : t.estimator.noteCashWarn;
   const confidenceImage =
     planBand === 'warn'
-      ? '/images/estimator/estimator-confidence-warn.png'
-      : '/images/estimator/estimator-confidence-good.png';
+      ? '/images/estimator/estimator-confidence-warn.jpg'
+      : '/images/estimator/estimator-confidence-good.jpg';
 
   const confidenceLabel =
     planBand === 'starter' ? t.estimator.starterScale : planBand === 'good' ? t.optimal : t.caution;
@@ -1296,7 +1296,7 @@ function CalculatorPage({ langCode, lowData, setLowData }) {
           <div
             className="estimator-banner"
             aria-hidden="true"
-            style={{ backgroundImage: "url('/images/estimator/estimator-banner.png')" }}
+            style={{ backgroundImage: "url('/images/estimator/estimator-banner.webp')" }}
           />
           <h2>{t.calculatorTitle}</h2>
           <p>{t.calculatorLead}</p>
@@ -1477,7 +1477,7 @@ function MarketPage({ langCode, lowData, setLowData }) {
           <div
             className="market-banner"
             aria-hidden="true"
-            style={{ backgroundImage: "url('/images/market_clock/market-banner.png')" }}
+            style={{ backgroundImage: "url('/images/market_clock/market-banner.jpg')" }}
           />
           <h2>{t.marketTitle}</h2>
           <p className="market-lead">{t.marketLead}</p>
@@ -1540,7 +1540,7 @@ function MarketPage({ langCode, lowData, setLowData }) {
               <div
                 className="market-tip-photo"
                 aria-hidden="true"
-                style={{ backgroundImage: "url('/images/market_clock/market-sell-window.png')" }}
+                style={{ backgroundImage: "url('/images/market_clock/market-sell-window.jpg')" }}
               />
               <h3>Choosing Your Sell Window</h3>
               <p>
@@ -1553,7 +1553,7 @@ function MarketPage({ langCode, lowData, setLowData }) {
               <div
                 className="market-tip-photo"
                 aria-hidden="true"
-                style={{ backgroundImage: "url('/images/market_clock/market-storage-tip.png')" }}
+                style={{ backgroundImage: "url('/images/market_clock/market-storage-tip.jpg')" }}
               />
               <h3>Storage as a Market Tool</h3>
               <p>
@@ -1671,32 +1671,32 @@ function SeasonalPage({ langCode, lowData, setLowData }) {
     {
       key: 'land-prep',
       title: 'Land Preparation',
-      image: '/images/seasonal/seasonal-land-prep.png',
+      image: '/images/seasonal/seasonal-land-prep.jpg',
     },
     {
       key: 'planting',
       title: 'Planting Window',
-      image: '/images/seasonal/seasonal-planting.png',
+      image: '/images/seasonal/seasonal-planting.jpg',
     },
     {
       key: 'weeding',
       title: 'Weeding Phase',
-      image: '/images/seasonal/seasonal-weeding.png',
+      image: '/images/seasonal/seasonal-weeding.jpg',
     },
     {
       key: 'harvest',
       title: 'Main Harvest',
-      image: '/images/seasonal/seasonal-harvest.png',
+      image: '/images/seasonal/seasonal-harvest.jpg',
     },
     {
       key: 'winter-wheat',
       title: 'Winter Wheat Cycle',
-      image: '/images/seasonal/seasonal-winter-wheat.png',
+      image: '/images/seasonal/seasonal-winter-wheat.jpg',
     },
     {
       key: 'lean',
       title: 'Lean Season Pressure',
-      image: '/images/seasonal/seasonal-lean-season.png',
+      image: '/images/seasonal/seasonal-lean-season.jpg',
     },
   ];
 
@@ -1707,7 +1707,7 @@ function SeasonalPage({ langCode, lowData, setLowData }) {
           <div
             className="seasonal-banner"
             aria-hidden="true"
-            style={{ backgroundImage: "url('/images/seasonal/seasonal-banner.png')" }}
+            style={{ backgroundImage: "url('/images/seasonal/seasonal-banner.jpg')" }}
           />
           <h2>{t.seasonalTitle}</h2>
           <p>{t.seasonalLead}</p>
@@ -1884,27 +1884,27 @@ function VegetablesPage({ langCode, lowData, setLowData }) {
     {
       key: 'cool-season',
       title: 'Cool Season Crop Systems',
-      image: '/images/vegetables/egetables-cool-season.png',
+      image: '/images/vegetables/egetables-cool-season.jpg',
     },
     {
       key: 'warm-season',
       title: 'Warm Season Crop Systems',
-      image: '/images/vegetables/vegetables-warm-season.png',
+      image: '/images/vegetables/vegetables-warm-season.jpg',
     },
     {
       key: 'seedlings',
       title: 'Seedling Stage Management',
-      image: '/images/vegetables/vegetables-seedling-stage.png',
+      image: '/images/vegetables/vegetables-seedling-stage.jpg',
     },
     {
       key: 'transplanting',
       title: 'Transplanting and Bed Setup',
-      image: '/images/vegetables/vegetables-transplanting.png',
+      image: '/images/vegetables/vegetables-transplanting.jpg',
     },
     {
       key: 'market-ready',
       title: 'Market-Ready Grading',
-      image: '/images/vegetables/vegetables-market-ready.png',
+      image: '/images/vegetables/vegetables-market-ready.jpg',
     },
   ];
 
@@ -1915,7 +1915,7 @@ function VegetablesPage({ langCode, lowData, setLowData }) {
           <div
             className="vegetables-banner"
             aria-hidden="true"
-            style={{ backgroundImage: "url('/images/vegetables/vegetables-banner.png')" }}
+            style={{ backgroundImage: "url('/images/vegetables/vegetables-banner.jpg')" }}
           />
           <h2>{t.vegetablesTitle}</h2>
           <p>{t.vegetablesLead}</p>
@@ -2084,37 +2084,37 @@ function PestsPage({ langCode, lowData, setLowData }) {
     {
       key: 'diagnostic-workflow',
       title: 'Diagnostic Workflow',
-      image: '/images/pests_gallery/pest-diagnostic-workflow.png',
+      image: '/images/pests_gallery/pest-diagnostic-workflow.jpg',
       copy: 'Start with consistent scouting routes, compare hot spots by block, and log symptom progression before deciding control options.',
     },
     {
       key: 'threshold-check',
       title: 'Threshold Check',
-      image: '/images/pests_gallery/pest-threshold-check.png',
+      image: '/images/pests_gallery/pest-threshold-check.jpg',
       copy: 'Use visible damage counts and pest stage checks to avoid unnecessary sprays and to time interventions more effectively.',
     },
     {
       key: 'disease-symptom',
       title: 'Leaf Symptom Recognition',
-      image: '/images/pests_gallery/disease-symptom-leaf.png',
+      image: '/images/pests_gallery/disease-symptom-leaf.jpg',
       copy: 'Distinguish nutrient stress from disease signs by pattern, lesion texture, and spread behavior across the canopy.',
     },
     {
       key: 'spray-safety',
       title: 'Spray Safety and PPE',
-      image: '/images/pests_gallery/spray-safety-kit.png',
+      image: '/images/pests_gallery/spray-safety-kit.jpg',
       copy: 'Treat PPE and calibration as non-negotiable: safe handling protects labor health and prevents misapplication losses.',
     },
     {
       key: 'organic-remedy',
       title: 'Local Organic Remedies',
-      image: '/images/pests_gallery/organic-remedy-prep.png',
+      image: '/images/pests_gallery/organic-remedy-prep.jpg',
       copy: 'Prepared local remedies can support integrated control where pressure is still low to moderate and frequent monitoring is maintained.',
     },
     {
       key: 'field-sanitation',
       title: 'Field Sanitation',
-      image: '/images/pests_gallery/field-sanitation.png',
+      image: '/images/pests_gallery/field-sanitation.jpg',
       copy: 'Removing infected plant material and volunteer hosts reduces reinfestation pressure between cycles.',
     },
   ];
@@ -2126,7 +2126,7 @@ function PestsPage({ langCode, lowData, setLowData }) {
           <div
             className="pests-banner"
             aria-hidden="true"
-            style={{ backgroundImage: "url('/images/pests_gallery/pest-gallery-banner.png')" }}
+            style={{ backgroundImage: "url('/images/pests_gallery/pest-gallery-banner.jpg')" }}
           />
           <h2>{t.pestsTitle}</h2>
           <p>{t.pestsLead}</p>
