@@ -1,5 +1,5 @@
 import { Link, Navigate, Route, Routes, useParams } from 'react-router-dom';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 const languages = {
   en: {
@@ -752,6 +752,45 @@ function remedyPath(langCode, slug) {
   return prefix ? `${prefix}/remedy/${slug}` : `/remedy/${slug}`;
 }
 
+const siteUrl = 'https://zim-agro.netlify.app';
+
+function setMetaTag(attr, key, content) {
+  const selector = attr === 'name' ? `meta[name="${key}"]` : `meta[property="${key}"]`;
+  let node = document.head.querySelector(selector);
+
+  if (!node) {
+    node = document.createElement('meta');
+    node.setAttribute(attr, key);
+    document.head.appendChild(node);
+  }
+
+  node.setAttribute('content', content);
+}
+
+function PageSeo({ title, description, path }) {
+  useEffect(() => {
+    document.title = title;
+
+    setMetaTag('name', 'description', description);
+    setMetaTag('property', 'og:title', title);
+    setMetaTag('property', 'og:description', description);
+
+    const canonicalUrl = `${siteUrl}${path}`;
+    setMetaTag('property', 'og:url', canonicalUrl);
+
+    let canonicalLink = document.head.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonicalLink);
+    }
+
+    canonicalLink.setAttribute('href', canonicalUrl);
+  }, [title, description, path]);
+
+  return null;
+}
+
 function AppFrame({ langCode, currentPage, children, lowData, setLowData }) {
   const t = languages[langCode];
   const homePath = pagePath(langCode, 'overview');
@@ -851,6 +890,7 @@ function AppFrame({ langCode, currentPage, children, lowData, setLowData }) {
 
 function OverviewPage({ langCode, lowData, setLowData }) {
   const t = languages[langCode];
+  const langSegment = languagePrefix(langCode);
   const pageCards = [
     {
       key: 'matrix',
@@ -962,6 +1002,11 @@ function OverviewPage({ langCode, lowData, setLowData }) {
 
   return (
     <AppFrame langCode={langCode} currentPage="overview" lowData={lowData} setLowData={setLowData}>
+      <PageSeo
+        title="Zim-Agro Zimbabwe Farming Dashboard | Regions, Inputs, Market Timing"
+        description="Data-rich farming guidance for Zimbabwe: natural regions, seed and fertilizer planning, seasonal market timing, crop calendars, and pest diagnostics."
+        path={`${langSegment}/`}
+      />
       <main className="stack">
         <section className="card print-surface">
           <div
@@ -1073,6 +1118,11 @@ function MatrixPage({ langCode, lowData, setLowData }) {
 
   return (
     <AppFrame langCode={langCode} currentPage="matrix" lowData={lowData} setLowData={setLowData}>
+      <PageSeo
+        title="Zimbabwe Natural Regions Crop Matrix | Zim-Agro"
+        description="Explore Zimbabwe's five natural farming regions with rainfall bands, crop fit, spacing, and agronomy planning notes."
+        path={pagePath(langCode, 'matrix')}
+      />
       <main className="stack">
         <section className="card print-surface">
           <div
@@ -1288,6 +1338,11 @@ function CalculatorPage({ langCode, lowData, setLowData }) {
 
   return (
     <AppFrame langCode={langCode} currentPage="calculator" lowData={lowData} setLowData={setLowData}>
+      <PageSeo
+        title="Seed and Fertilizer Estimator for Zimbabwe Farmers | Zim-Agro"
+        description="Estimate seed, basal fertilizer, and top-dressing needs by acreage for maize, tobacco, and sorghum in Zimbabwe."
+        path={pagePath(langCode, 'calculator')}
+      />
       <main className="stack">
         <section className="card print-surface">
           <div
@@ -1467,6 +1522,11 @@ function MarketPage({ langCode, lowData, setLowData }) {
 
   return (
     <AppFrame langCode={langCode} currentPage="market" lowData={lowData} setLowData={setLowData}>
+      <PageSeo
+        title="Zimbabwe Seasonal Market Clock | Crop Selling Windows"
+        description="Use Zimbabwe market timing patterns to plan crop selling windows, avoid gluts, and improve farm pricing outcomes."
+        path={pagePath(langCode, 'market')}
+      />
       <main className="stack">
 
         {/* ── Section 1: Header + Signal + Commodity Cards ── */}
@@ -1699,6 +1759,11 @@ function SeasonalPage({ langCode, lowData, setLowData }) {
 
   return (
     <AppFrame langCode={langCode} currentPage="seasonal" lowData={lowData} setLowData={setLowData}>
+      <PageSeo
+        title="Zimbabwe Farming Seasonal Calendar | Planting to Harvest"
+        description="Month-by-month seasonal farming calendar for Zimbabwe covering land preparation, planting, weeding, harvest, and lean-season planning."
+        path={pagePath(langCode, 'seasonal')}
+      />
       <main className="stack">
         <section className="card print-surface">
           <div
@@ -1907,6 +1972,11 @@ function VegetablesPage({ langCode, lowData, setLowData }) {
 
   return (
     <AppFrame langCode={langCode} currentPage="vegetables" lowData={lowData} setLowData={setLowData}>
+      <PageSeo
+        title="Zimbabwe Vegetables Planting Calendar | Zim-Agro"
+        description="Vegetable planting calendar and decision playbook for Zimbabwe farmers, including crop-month windows and production timing guidance."
+        path={pagePath(langCode, 'vegetables')}
+      />
       <main className="stack">
         <section className="card print-surface">
           <div
@@ -2118,6 +2188,11 @@ function PestsPage({ langCode, lowData, setLowData }) {
 
   return (
     <AppFrame langCode={langCode} currentPage="pests" lowData={lowData} setLowData={setLowData}>
+      <PageSeo
+        title="Zimbabwe Crop Pest and Disease Guide | Zim-Agro"
+        description="Visual pest and disease diagnostics with practical field intervention steps and remedy references for Zimbabwe agriculture."
+        path={pagePath(langCode, 'pests')}
+      />
       <main className="stack">
         <section className="card print-surface">
           <div
@@ -2229,6 +2304,11 @@ function ContactPage({ langCode, lowData, setLowData }) {
 
   return (
     <AppFrame langCode={langCode} currentPage="contact" lowData={lowData} setLowData={setLowData}>
+      <PageSeo
+        title="Contact Zim-Agro | Zimbabwe Agriculture Platform"
+        description="Contact Zim-Agro for agriculture content updates, corrections, and support requests for Zimbabwe farming information."
+        path={pagePath(langCode, 'contact')}
+      />
       <main className="stack">
         <section className="card print-surface">
           <div className="contact-banner" aria-hidden="true" />
@@ -2311,9 +2391,14 @@ function RemedyPage({ langCode, lowData, setLowData }) {
   const slug = params.slug ?? '';
   const item = remedyData[slug];
   const backPath = pagePath(langCode, 'overview');
+  const remedyTitle = item ? `${item.title} Remedy Guide | Zim-Agro` : 'Pest Remedy Guide | Zim-Agro';
+  const remedyDescription = item
+    ? `${item.title} management guidance for Zimbabwe farmers, including organic/local options and chemical control notes.`
+    : 'Practical remedy guidance for crop pest and disease management in Zimbabwe.';
 
   return (
     <AppFrame langCode={langCode} currentPage="pests" lowData={lowData} setLowData={setLowData}>
+      <PageSeo title={remedyTitle} description={remedyDescription} path={remedyPath(langCode, slug)} />
       <main className="stack">
         <section className="card print-surface">
           {item ? (
