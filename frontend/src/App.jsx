@@ -2369,16 +2369,7 @@ function ContactPage({ langCode, lowData, setLowData }) {
         </section>
 
         <section className="card print-surface">
-          <h2>Email-Only Contact (Current Setup)</h2>
-          <p>
-            Yes, this static setup does not need special functionality for visitors to contact you. They can send
-            messages directly to <a href="mailto:lincolnrwodzi418@gmail">lincolnrwodzi418@gmail</a> using their own
-            email app.
-          </p>
-          <p>
-            As traffic grows, you can later add a proper contact form and newsletter integration without rebuilding the
-            whole site structure.
-          </p>
+          
         </section>
       </main>
     </AppFrame>
