@@ -814,14 +814,14 @@ function AppFrame({ langCode, currentPage, children, lowData, setLowData }) {
           <strong className="brand">Zim-Agro</strong>
           <div className="header-right">
             <div className="header-actions no-print">
-              <label className="toggle">
+              {/* <label className="toggle">
                 <input
                   type="checkbox"
                   checked={lowData}
                   onChange={(event) => setLowData(event.target.checked)}
                 />
                 <span>{t.lowData}</span>
-              </label>
+              </label> */}
               <button type="button" className="save-btn" onClick={() => window.print()}>
                 {t.saveField}
               </button>
