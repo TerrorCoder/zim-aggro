@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zim-agro.netlify.app/sitemap.xml
+Sitemap: https://zim-agro.kairosgroup.co.zw/sitemap.xml

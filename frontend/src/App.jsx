@@ -752,7 +752,7 @@ function remedyPath(langCode, slug) {
   return prefix ? `${prefix}/remedy/${slug}` : `/remedy/${slug}`;
 }
 
-const siteUrl = 'https://zim-agro.netlify.app';
+const siteUrl = 'https://zim-agro.kairosgroup.co.zw';
 
 function setMetaTag(attr, key, content) {
   const selector = attr === 'name' ? `meta[name="${key}"]` : `meta[property="${key}"]`;
