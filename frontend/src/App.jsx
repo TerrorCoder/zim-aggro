@@ -938,65 +938,65 @@ function OverviewPage({ langCode, lowData, setLowData }) {
   const zimResearchCards = [
     {
       type: 'signal',
-      title: 'Season Status 2025/26',
-      metric: 'IPC Phase 2 (Stressed) — Crisis Risk in Southern Pockets',
+      title: 'June 2026 FEWS NET Outlook',
+      metric: 'IPC Phase 2 now, with IPC Phase 3 expected in deficit areas from Oct 2026',
       detail:
-        'FEWS NET classifies most of Zimbabwe at IPC Phase 2 (Stressed) through May 2026. Localized Phase 3 (Crisis) conditions are expected in southern Masvingo and Matabeleland South, where the January–February dry spell compounded poor carryover stocks from the 2024 El Niño season.',
-      action: 'Prioritize lean-season working capital and monitor FEWS NET monthly updates for target districts.',
-      tag: 'FEWS NET Feb 2026',
+        'FEWS NET says poor households can currently meet minimum food needs with recent harvest stocks, but deficit-producing areas in the south, east, west, and extreme north are expected to shift from Stressed (IPC Phase 2) to Crisis (IPC Phase 3) from around October through January 2027. Most Mashonaland surplus areas remain Minimal (IPC Phase 1).',
+      action: 'Build working-capital buffers now and track the October stock-depletion window for target districts.',
+      tag: 'FEWS NET Jun 2026',
     },
     {
       type: 'context',
-      title: 'Rainfall Pattern 2025/26',
-      metric: 'Early Start — February Dry Spell — March Recovery',
+      title: '2025/26 Harvest and Maize Prices',
+      metric: '2.35M MT maize; 2.7M MT total cereals; 0.23-0.29 USD/kg in surplus areas',
       detail:
-        'Widespread rains arrived in October–November 2025, giving early planters a strong start. A pronounced dry spell from late January to mid-February cut moisture reserves in southern and central districts. A March recovery window opened, though total season rainfall is expected below the 5-year average in most southern zones.',
+        'The 2026 CLAFA 2 estimates maize production at 2.35 million metric tons and total cereal production at around 2.7 million metric tons. FEWS NET says this has increased cereal availability and driven seasonal maize grain price declines in many areas, with surplus-zone prices around 0.23-0.29 USD/kg while deficit areas remain higher.',
       action: null,
-      tag: 'FEWS NET / ZIMSTAT',
+      tag: 'FEWS NET Jun 2026',
     },
     {
       type: 'context',
-      title: 'Tobacco Market — Current Floor',
-      metric: 'US$2.80/kg · 15.8 M kg sold YTD · 11 Mar 2026',
+      title: '2026 Tobacco Season',
+      metric: '360-400M kg expected; sales volumes up 17% by early June',
       detail:
-        'TIMB floor reporting for 11 March 2026 shows 15,820,994 kg sold year-to-date at a US$2.80/kg average. Auction-based pricing means early-season grades trade below peak; mid-to-late-season delivery windows historically achieve stronger bids as early glut pressure eases.',
-      action: 'Target mid-season delivery windows and invest in curing quality to capture better price points.',
-      tag: 'TIMB 11 Mar 2026',
+        'FEWS NET’s June 2026 outlook cites a record tobacco harvest forecast of 360 to 400 million kilograms. It also notes that TIMB reported a 17 percent increase in sales volumes compared with the same point last year, even as prices were around 25 percent lower.',
+      action: 'Protect curing quality and watch mid-season price windows before moving volume.',
+      tag: 'FEWS NET / TIMB Jun 2026',
     },
     {
       type: 'context',
-      title: 'Smallholder Agriculture Profile',
-      metric: '1.8M+ Smallholder Households · 2–6 ha per Plot',
+      title: 'Income and Cost Pressure',
+      metric: 'Transport fares 50-100% higher; poor-household incomes remain below average',
       detail:
-        "Zimbabwe's smallholder sector comprises over 1.8 million rural farm households operating on A1 and communal land, most holding between 2 and 6 hectares. Rain-fed production remains the norm, making seasonal planning tools and local extension support the difference between food security and a lean-season shortfall.",
+        'FEWS NET says fuel and transport costs remain above average after the February energy shock, reducing disposable income. In deficit-producing areas, crop sales, casual labor, remittances, and petty trade are still below average, which is limiting household purchasing power even after the harvest.',
       action: null,
-      tag: 'ZIMSTAT / FAO',
+      tag: 'FEWS NET Jun 2026',
     },
     {
       type: 'context',
-      title: 'Climate Risk Baseline',
-      metric: '2024 El Niño — 40–60% Rainfall Deficit in the South',
+      title: 'Water and Livelihood Conditions',
+      metric: 'About 91% dam levels as of 22 Jun 2026',
       detail:
-        "Southern districts recorded 40–60% of normal seasonal rainfall in the 2024 El Niño year, cutting staple food output and slowing Zimbabwe's recovery trajectory. The World Bank flags these compound shocks as systemic risks for rural livelihoods. Climate-adapted crop selection is no longer optional for lower-rainfall zones.",
+        'FEWS NET reports that ZINWA recorded national dam levels at about 91 percent full on June 22, supporting winter irrigation and post-harvest horticulture. Above-average biomass is also raising veld fire risk across most provinces during the 2026 dry season.',
       action: null,
-      tag: 'World Bank 2025',
+      tag: 'ZINWA / FEWS NET Jun 2026',
     },
     {
       type: 'action',
-      title: 'Lean Season Planning Window',
-      metric: 'Feb–Apr is Peak Household Food Stress',
+      title: 'Lean Season Outlook',
+      metric: 'Poor-area stocks may deplete before Aug/Sep in the 2026/27 cycle',
       detail:
-        'In deficit-producing areas, household food stocks exhaust between February and April before the main harvest arrives. This coincides with peak weeding and top-dressing labour demand. Cash flow planning, community grain banking, and diversified income sources all reduce lean-season exposure.',
-      action: 'Use the Market Clock and Seasonal Calendar tabs to map your cash flow against lean-season months.',
-      tag: 'Field Practice',
+        'The outlook says the 2026/27 lean season could start earlier than usual in poor-production areas because stocks may run out two to four months after harvest. In surplus areas, own-produced food stocks are expected to last longer, but market reliance rises once household reserves fade.',
+      action: 'Use the Market Clock and Seasonal Calendar tabs to line up sales, planting, and household cash needs.',
+      tag: 'FEWS NET Jun 2026',
     },
   ];
   const researchSources = [
-    { label: 'FEWS NET Zimbabwe key messages (Feb 2026)', url: 'https://fews.net/southern-africa/zimbabwe' },
-    { label: 'TIMB daily marketing updates', url: 'https://www.timb.co.zw/' },
+    { label: 'FEWS NET Zimbabwe Food Security Outlook (June 2026)', url: 'https://fews.net/southern-africa/zimbabwe/food-security-outlook/june-2026' },
+    { label: 'FEWS NET Zimbabwe latest key message updates', url: 'https://fews.net/southern-africa/zimbabwe' },
     {
-      label: 'World Bank: Zimbabwe resilience and climate shocks',
-      url: 'https://openknowledge.worldbank.org/entities/publication/89688755-d2d8-4e15-9c42-e327fc632bdb',
+      label: 'FEWS NET Zimbabwe seasonal calendar',
+      url: 'https://fews.net/southern-africa/zimbabwe/seasonal-calendar/july-2024',
     },
   ];
 
@@ -1052,10 +1052,10 @@ function OverviewPage({ langCode, lowData, setLowData }) {
            </div>
 
            <div className="intel-stats">
-             <div className="intel-stat"><strong>1.8M+</strong><span>Smallholder households</span></div>
-             <div className="intel-stat"><strong>5</strong><span>Rainfall-defined natural regions</span></div>
-             <div className="intel-stat"><strong>IPC 2–3</strong><span>Active food security phases</span></div>
-             <div className="intel-stat"><strong>US$2.80</strong><span>Tobacco avg/kg · 11 Mar 2026</span></div>
+             <div className="intel-stat"><strong>2.35M MT</strong><span>2026 maize production estimate</span></div>
+             <div className="intel-stat"><strong>91%</strong><span>National dam levels as of 22 Jun 2026</span></div>
+             <div className="intel-stat"><strong>IPC 2 → 3</strong><span>Deficit areas from Oct 2026</span></div>
+             <div className="intel-stat"><strong>360-400M kg</strong><span>2026 tobacco harvest forecast</span></div>
            </div>
 
            <div className="intel-grid">
@@ -1098,8 +1098,8 @@ function MatrixPage({ langCode, lowData, setLowData }) {
   const [activeRegion, setActiveRegion] = useState('II');
   const matrixSources = [
     {
-      label: 'FEWS NET Zimbabwe Food Security Outlook (Feb 2026)',
-      url: 'https://fews.net/southern-africa/zimbabwe/food-security-outlook/february-2026',
+      label: 'FEWS NET Zimbabwe Food Security Outlook (June 2026)',
+      url: 'https://fews.net/southern-africa/zimbabwe/food-security-outlook/june-2026',
     },
     {
       label: 'Zimbabwe seasonal and livelihoods resources (FEWS NET)',
@@ -1213,7 +1213,7 @@ function MatrixPage({ langCode, lowData, setLowData }) {
 
           <div className="intel-signal" style={{ marginTop: '1.2rem' }}>
             <div className="intel-signal-head">
-              <span className="intel-badge intel-badge--signal">FEWS NET / MAR 2026</span>
+              <span className="intel-badge intel-badge--signal">FEWS NET Jun 2026</span>
               <strong className="intel-signal-label">2025/26 Season Signal</strong>
             </div>
             <h3>Early Rains → February Dry Spell → Localized Yield Pressure</h3>
@@ -2330,7 +2330,7 @@ function ContactPage({ langCode, lowData, setLowData }) {
           <article className="contact-direct-card">
             <h3>Primary Contact Channel</h3>
             <p>
-              Email: <a href="mailto:lincolnrwodzi418@gmail">lincolnrwodzi418@gmail</a>
+              Email: <a href="mailto:lincolnrwodzi418@gmail.com">lincolnrwodzi418@gmail.com</a>
             </p>
             <p>
               For update requests, use the subject line <strong>"Zim-Agro Update Request - [Section Name]"</strong>
