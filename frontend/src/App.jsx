@@ -1,4 +1,4 @@
-import { Link, Navigate, Route, Routes, useParams } from 'react-router-dom';
+import { Link, Route, Routes, useParams } from 'react-router-dom';
 import { useEffect, useMemo, useState } from 'react';
 
 const languages = {
@@ -767,15 +767,34 @@ function setMetaTag(attr, key, content) {
   node.setAttribute('content', content);
 }
 
-function PageSeo({ title, description, path }) {
+function normalizePath(path) {
+  return path === '/' ? '/' : `${path.replace(/\/$/, '')}/`;
+}
+
+function localizedPath(path, langCode) {
+  const basePath = path.replace(/^\/(sn|nd)(?=\/|$)/, '') || '/';
+  const prefix = languagePrefix(langCode);
+  return normalizePath(prefix ? `${prefix}${basePath === '/' ? '' : basePath}` : basePath);
+}
+
+function PageSeo({ title, description, path, noIndex = false }) {
   useEffect(() => {
+    const currentLanguage = path === '/sn' || path.startsWith('/sn/')
+      ? 'sn'
+      : path === '/nd' || path.startsWith('/nd/')
+        ? 'nd'
+        : 'en';
+    const canonicalPath = normalizePath(path);
+
+    document.documentElement.lang = currentLanguage;
     document.title = title;
 
     setMetaTag('name', 'description', description);
+    setMetaTag('name', 'robots', noIndex ? 'noindex,follow' : 'index,follow,max-image-preview:large');
     setMetaTag('property', 'og:title', title);
     setMetaTag('property', 'og:description', description);
 
-    const canonicalUrl = `${siteUrl}${path}`;
+    const canonicalUrl = `${siteUrl}${canonicalPath}`;
     setMetaTag('property', 'og:url', canonicalUrl);
 
     let canonicalLink = document.head.querySelector('link[rel="canonical"]');
@@ -786,9 +805,41 @@ function PageSeo({ title, description, path }) {
     }
 
     canonicalLink.setAttribute('href', canonicalUrl);
-  }, [title, description, path]);
+
+    document.head.querySelectorAll('link[data-seo-alternate="true"]').forEach((node) => node.remove());
+    if (!noIndex) {
+      [...Object.keys(languages), 'x-default'].forEach((langCode) => {
+        const alternateLanguage = langCode === 'x-default' ? 'en' : langCode;
+        const alternateLink = document.createElement('link');
+        alternateLink.setAttribute('rel', 'alternate');
+        alternateLink.setAttribute('hreflang', langCode);
+        alternateLink.setAttribute('href', `${siteUrl}${localizedPath(path, alternateLanguage)}`);
+        alternateLink.setAttribute('data-seo-alternate', 'true');
+        document.head.appendChild(alternateLink);
+      });
+    }
+  }, [title, description, path, noIndex]);
 
   return null;
+}
+
+function NotFoundPage() {
+  return (
+    <main className="page-shell">
+      <PageSeo
+        title="Page Not Found | Zim-Agro"
+        description="The requested Zim-Agro page could not be found."
+        path={window.location.pathname}
+        noIndex
+      />
+      <section className="card" style={{ maxWidth: '42rem', margin: '4rem auto', textAlign: 'center' }}>
+        <p className="eyebrow">404</p>
+        <h1>Page not found</h1>
+        <p>The page you requested does not exist or may have moved.</p>
+        <Link className="back-link" to="/">Return to Zim-Agro</Link>
+      </section>
+    </main>
+  );
 }
 
 function AppFrame({ langCode, currentPage, children, lowData, setLowData }) {
@@ -2464,7 +2515,7 @@ function RoutedApp() {
       {routeConfigs.map((routeConfig) => (
         <Route key={routeConfig.path} path={routeConfig.path} element={routeConfig.element} />
       ))}
-      <Route path="*" element={<Navigate to="/" replace />} />
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
 }
